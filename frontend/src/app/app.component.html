@@ -1,13 +1,13 @@
 <div class="TopMenu">
   <div class="Tekst">
-    <p>SmartQuiz</p>
-    <p>Categories</p>
-    <p>About Us</p>
+    <p [routerLink]="['/']">SmartQuiz</p>
+    <p [routerLink]="['categories']">Categories</p>
+    <p [routerLink]="['aboutus']">About Us</p>
+    <!--<a href="/aboutus" target="_blank" #aboutUs><p>About Us</p></a>-->
     <p>Login</p>
    <p>Sign Up</p>
   </div>
 </div>
 
-<div class="sredina">
-  <app-slide></app-slide>
-</div>
+<router-outlet>
+</router-outlet>
