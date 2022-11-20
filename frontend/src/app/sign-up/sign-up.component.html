@@ -1,0 +1,59 @@
+<div class="container mt-5">   
+    <form class="content" [formGroup]="signUp"  (ngSubmit)="submitData()">
+         <h3 class="text-center">Registriraj se</h3>
+
+         <div class="row">
+
+             <div class="mt-2 mb-2 col-lg-12 col-12">  
+                   <input type="text" formControlName="firstName" class="form-control" placeholder="Ime">
+                <!--Display error start-->
+                <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+                      <span class="error" *ngIf="firstName.errors && firstName.errors['required']">*Ime je obavezno</span>
+                      <span class="error" *ngIf="firstName.errors && firstName.errors['pattern']">*Unesite samo slova</span>
+                </div>
+                <!--Display error end-->
+             </div>
+                          
+             <div class="mt-2 mb-2 col-lg-12 col-12">  
+                <input type="text" formControlName="lastName" class="form-control" placeholder="Prezime">
+            <!--Display error start-->
+                 <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+                  <span class="error" *ngIf="lastName.errors && lastName.errors['required']">*Prezime je obavezno</span>
+                  <span class="error" *ngIf="lastName.errors && lastName.errors['pattern']">*Unesite samo slova</span>
+                 </div>
+          <!--Display error end--> 
+              </div>
+
+             <div class="mt-2 mb-2 col-lg-12 col-12">  
+                <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                <div *ngIf="email.invalid && (email.touched || email.dirty)">
+                    <span class="error" *ngIf="email.errors && email.errors['required']">*Email je obavezan</span>
+                    <span class="error" *ngIf="email.errors && email.errors['email']">*Unesite validnu email adresu</span>
+                </div>    
+            
+            </div>
+
+            
+          <div class="card-body">
+                <h4 class="card-title">Odaberi spol:</h4>
+                
+                <div >
+
+                    <input type="radio" name="radio" id="radio1" checked="true" />
+                    <label class="radio" for="radio1">Muško</label>
+                    <input type="radio" name="radio" id="radio2" />
+                    <label for="radio2">Žensko</label>
+                    
+                    
+
+                </div>
+                 
+            </div>
+
+             <div class="mt-2 mb-2 col-lg-12 col-12">
+                <button class="btn" [disabled]="signUp.invalid">Registruj se</button>
+             </div>
+
+         </div>
+    </form>
+</div>

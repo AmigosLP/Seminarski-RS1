@@ -1,14 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AboutUsComponent } from "./about-us/about-us.component";
-import { CategoriesComponent } from "./categories/categories.component";
-import { SlideComponent } from "./slide/slide.component";
+import { AboutUsComponent } from "./app/about-us/about-us.component";
+import { CategoriesComponent } from "./app/categories/categories.component";
+import { SignUpComponent } from "./app/sign-up/sign-up.component";
+import { SlideComponent } from "./app/slide/slide.component";
 
 const routes: Routes = [
     {path:"",component: SlideComponent},
     {path:"aboutus",component: AboutUsComponent},
     {path:"categories",component:CategoriesComponent},
-    {path:"**", redirectTo: '/'}
+    {path:"signup",component:SignUpComponent}
   
 ];
 
