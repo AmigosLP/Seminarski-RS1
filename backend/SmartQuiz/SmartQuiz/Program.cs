@@ -13,7 +13,15 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
 
+builder.Services.AddCors();
+
 var app = builder.Build();
+
+app.UseCors(builder =>
+{
+    builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

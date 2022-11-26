@@ -10,6 +10,9 @@ import { CategoriesComponent } from './app/categories/categories.component';
 import { SignUpComponent } from './app/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './app/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
+import { MainPageComponent } from './app/main-page/main-page.component' 
 
 
 
@@ -20,13 +23,18 @@ import { LoginComponent } from './app/login/login.component';
     SlideComponent,
     CategoriesComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgToastModule
+    
+    
     
   ],
   providers: [],
