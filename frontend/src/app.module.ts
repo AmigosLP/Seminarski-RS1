@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.components';
 import { CategoriesComponent } from './app/categories/categories.component';
 import { SignUpComponent } from './app/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './app/login/login.component';
 
 
 
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutUsComponent,
     SlideComponent,
     CategoriesComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

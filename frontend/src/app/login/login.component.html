@@ -1,0 +1,42 @@
+<div class="container mt-5">   
+    <form class="content" [formGroup]="prijava"  (ngSubmit)="prijavaKorisnika()">
+         <h3 class="text-center">Prijavi se</h3>
+
+         <div class="row">
+
+          
+                          
+          
+
+            <div class="mt-2 mb-2 col-lg-12 col-12">  
+                <input type="text" formControlName="username" class="form-control" placeholder="Username">
+                <div *ngIf="username.invalid && (username.touched || username.dirty)">
+                    <span class="error" *ngIf="username.errors && username.errors['required']">*Username je obavezan</span>
+                    
+                </div>    
+            
+            </div>
+
+            <div class="mt-2 mb-2 col-lg-12 col-12">  
+                <input type="password" formControlName="password" class="form-control" placeholder="Password">
+                <div *ngIf="password.invalid && (password.touched || password.dirty)">
+                    <span class="error" *ngIf="password.errors && password.errors['required']">*Password je obavezan</span>
+                    
+                </div>    
+            
+            </div>
+
+            
+          
+
+             <div class="mt-2 mb-2 col-lg-12 col-12">
+                <button class="btn" [disabled]="prijava.invalid">Prijavi se</button>
+             </div>
+             
+           
+             
+             
+
+         </div>
+    </form>
+</div>
