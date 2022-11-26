@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -9,7 +12,7 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth:AuthService,private router:Router,private toast:NgToastService) { }
 
   signUp = new FormGroup({
     "firstName": new FormControl(null, [Validators.required, Validators.pattern('[a-zA-Z]*')]),
@@ -25,12 +28,21 @@ export class SignUpComponent implements OnInit {
   }
   //submit function
   submitData() {
-    console.log(this.signUp.value);
+    this.auth.signUp(this.signUp.value)
+    .subscribe({
+      next:(res=>{
+        //alert(res.message);
+        this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
+        this.signUp.reset();
+        this.router.navigate(['login'])
 
-    if (this.signUp.valid) {
-      alert(`Thank You ${this.signUp.value.firstName}:)`);
-      this.signUp.reset();//reset form value
-    }
+      }),
+      error:(err=>{
+        //alert(err?.error.message);
+        this.toast.error({detail:"ERROR",summary:err?.error.message,duration:5000});
+      })
+    })
+
   }
 
   get firstName(): FormControl {
