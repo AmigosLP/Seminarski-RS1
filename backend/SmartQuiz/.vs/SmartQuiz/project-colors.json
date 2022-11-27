@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "48d233d4-cac5-4052-ad77-22eeafb4dd4b": {
+      "ProjectGuid": "48d233d4-cac5-4052-ad77-22eeafb4dd4b",
+      "DisplayName": "SmartQuiz",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
