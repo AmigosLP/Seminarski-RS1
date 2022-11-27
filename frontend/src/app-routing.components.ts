@@ -5,7 +5,7 @@ import { CategoriesComponent } from "./app/categories/categories.component";
 import { LoginComponent } from "./app/login/login.component";
 import { SignUpComponent } from "./app/sign-up/sign-up.component";
 import { SlideComponent } from "./app/slide/slide.component";
-import { MainPageComponent } from "./app/main-page/main-page.component";
+import { MainPageComponent } from "./app/user-page/main-page.component";
 
 const routes: Routes = [
     {path:"",component: SlideComponent},
@@ -13,7 +13,7 @@ const routes: Routes = [
     {path:"categories",component:CategoriesComponent},
     {path:"signup",component:SignUpComponent},
     {path:"login",component:LoginComponent},
-    {path:"mainpage",component:MainPageComponent}
+    {path:"userpage",component:MainPageComponent}
   
 ];
 

@@ -9,6 +9,7 @@ export class AuthService {
 
   private loginUrl:string="https://localhost:44333/api/Users"
   private signUpUrl:string="https://localhost:44333/api/Players"
+  
   constructor(private http:HttpClient,private router:Router) { }
 
   login(loginObj:any)

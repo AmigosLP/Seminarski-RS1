@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './app/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
-import { MainPageComponent } from './app/main-page/main-page.component' 
+import { MainPageComponent } from './app/user-page/main-page.component' 
 
 
 

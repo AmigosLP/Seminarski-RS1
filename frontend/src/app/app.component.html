@@ -8,7 +8,13 @@
     <p [routerLink]="['signup']">Sign up</p>
   </div>
 </div>
-
-<router-outlet>
-</router-outlet>
-<lib-ng-toast></lib-ng-toast>
+<div class="page-container">
+  <router-outlet>
+  </router-outlet>
+  <lib-ng-toast></lib-ng-toast>
+</div>
+<footer class="flex-shrink-0 py-2">
+  <div class="container text-center">
+    <small>Copyright &copy; Smart Quiz</small>
+  </div>
+</footer>

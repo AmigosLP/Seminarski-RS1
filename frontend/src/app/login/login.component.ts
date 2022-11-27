@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
        // alert(res.message);
         this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
         this.prijava.reset();
-        this.router.navigate(['mainpage'])
+        this.router.navigate(['userpage'])
       },
       error:(err)=>
       {
