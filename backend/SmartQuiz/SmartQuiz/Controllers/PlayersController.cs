@@ -115,7 +115,7 @@ namespace SmartQuiz.Controllers
             var gender = new Gender
             {
                 GenderName = userPlayer.GenderName
-            };
+            };  
             var player = new Player
             {
                 firstName = userPlayer.firstName,
