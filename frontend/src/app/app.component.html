@@ -4,10 +4,11 @@
     <p [routerLink]="['categories']">Categories</p>
     <p [routerLink]="['aboutus']">About Us</p>
     <!--<a href="/aboutus" target="_blank" #aboutUs><p>About Us</p></a>-->
-    <p>Login</p>
+    <p [routerLink]="['login']">Login</p>
     <p [routerLink]="['signup']">Sign up</p>
   </div>
 </div>
 
 <router-outlet>
 </router-outlet>
+<lib-ng-toast></lib-ng-toast>
