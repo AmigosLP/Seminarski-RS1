@@ -13,7 +13,7 @@ const routes: Routes = [
     {path:"categories",component:CategoriesComponent},
     {path:"signup",component:SignUpComponent},
     {path:"login",component:LoginComponent},
-    {path:"mainpage",component:MainPageComponent}
+    {path:"userpage",component:MainPageComponent}
   
 ];
 

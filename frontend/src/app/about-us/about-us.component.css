@@ -9,7 +9,17 @@ font-family: 'Poppins', sans-serif;
 
 
 }
-body
+
+.aboutus-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    text-align: center;
+    margin: auto;
+
+}
+/* body
 {
     
     display: flex;
@@ -20,7 +30,7 @@ body
     margin: auto;
     background: linear-gradient(to right, #b92b27, #1565c0)
 
-}
+} */
 
 /* 
 .card-image .card

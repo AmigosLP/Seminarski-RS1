@@ -128,6 +128,7 @@ namespace SmartQuiz.Controllers
                 Gender = gender,
             };
             user.Password = PasswordHasher.HashPassword(user.Password);
+
             await _context.Users.AddAsync(user);
             await _context.Supporters.AddAsync(supporter);
             await _context.SaveChangesAsync();

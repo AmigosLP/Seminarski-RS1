@@ -4,3 +4,7 @@ html
     width: 100%;
     height:100%;
 }
+
+body {
+    background: linear-gradient(to right, #b92b27, #1565c0);
+}
