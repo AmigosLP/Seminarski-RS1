@@ -13,7 +13,8 @@ import { LoginComponent } from './app/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { MainPageComponent } from './app/main-page/main-page.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome' 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SupportPageComponent } from './app/support-page/support-page.component' 
 
 
 
@@ -25,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     CategoriesComponent,
     SignUpComponent,
     LoginComponent,
-    MainPageComponent
+    MainPageComponent,
+    SupportPageComponent
   ],
   imports: [
     BrowserModule,
