@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using NuGet.Common;
 using SmartQuiz.Data;
 using SmartQuiz.Helper;
 using SmartQuiz.Models;
+using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace SmartQuiz.Controllers
 {
@@ -77,8 +83,13 @@ namespace SmartQuiz.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser([FromBody] User userObj)
+        public async Task<ActionResult<User>> PostUser([FromBody] UserCredentials userObj)
         {
+            if (userObj==null)
+            {
+                return BadRequest();
+            }
+
             var user = await _context.Users
                 .FirstOrDefaultAsync(x => x.Username == userObj.Username);
             if (user == null)
@@ -91,14 +102,43 @@ namespace SmartQuiz.Controllers
                 return BadRequest(new { Message = "Pogresna lozinka" });
             }
 
-            
+            user.Token = CreateJWToken(user);
 
             return Ok(new
             {
-                
+                Token=user.Token,
                 Message = "Uspjesna prijava"
 
             });
+        }
+
+        private string CreateJWToken(User user)
+        {
+            var builder = WebApplication.CreateBuilder();
+            var issuer = builder.Configuration["Jwt:Issuer"];
+            var audience = builder.Configuration["Jwt:Audience"];
+            var key = Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim("id",Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Sub,user.Username),
+                    new Claim(JwtRegisteredClaimNames.NameId,user.Username),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                }),
+                Expires = DateTime.UtcNow.AddMonths(1),
+                Issuer = issuer,
+                Audience = audience,
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha512Signature)
+            };
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var stringToken = tokenHandler.WriteToken(token);
+            return stringToken;
+
         }
 
         // DELETE: api/Users/5

@@ -535,3 +535,4 @@ E:\GitHub clone\Seminarski-RS1\backend\SmartQuiz\SmartQuiz\obj\Debug\net6.0\ref\
 E:\GitHub clone\Seminarski-RS1\backend\SmartQuiz\SmartQuiz\obj\Debug\net6.0\SmartQuiz.pdb
 E:\GitHub clone\Seminarski-RS1\backend\SmartQuiz\SmartQuiz\obj\Debug\net6.0\SmartQuiz.genruntimeconfig.cache
 E:\GitHub clone\Seminarski-RS1\backend\SmartQuiz\SmartQuiz\obj\Debug\net6.0\SmartQuiz.csproj.AssemblyReference.cache
+C:\Users\Faris Siocic\Documents\GitHub\Seminarski-RS1\backend\SmartQuiz\SmartQuiz\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
