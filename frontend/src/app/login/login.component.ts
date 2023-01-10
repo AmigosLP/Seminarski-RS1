@@ -36,12 +36,14 @@ export class LoginComponent implements OnInit {
        // alert(res.message);
         this.toast.success({detail:"SUCCESS",summary:res.message,duration:5000});
         this.prijava.reset();
-        this.router.navigate(['userpage'])
+        this.router.navigate(['mainpage'])
+        sessionStorage.setItem('token',JSON.stringify(res.token))
+        sessionStorage.setItem('user',JSON.stringify(res.username))
       },
       error:(err)=>
       {
         //alert(err?.error.message);
-        this.toast.error({detail:"ERROR",summary:err?.error.message,duration:5000});
+        this.toast.error({detail:"ERROR",summary:err?.res.message,duration:5000});
       }
     })
   }
