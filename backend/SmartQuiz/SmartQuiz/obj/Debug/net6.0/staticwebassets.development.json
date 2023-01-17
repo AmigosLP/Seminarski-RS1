@@ -1,1 +1,1 @@
-{"ContentRoots":["E:\\GitHub clone\\Seminarski-RS1\\backend\\SmartQuiz\\SmartQuiz\\wwwroot\\"],"Root":{"Children":null,"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["E:\\GitHub clone\\Seminarski-RS1\\backend\\SmartQuiz\\SmartQuiz\\wwwroot\\"],"Root":{"Children":{"images":{"Children":{".png":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"images/.png"},"Patterns":null}},"Asset":null,"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

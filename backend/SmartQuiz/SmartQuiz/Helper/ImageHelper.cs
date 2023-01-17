@@ -10,7 +10,7 @@
             {
                 return Formats.png;
             }
-            else if (ImageFormat == "data:image/jpg")
+            else if (ImageFormat == "data:image/jpg" || ImageFormat== "data:image/jpeg")
             {
                 return Formats.jpg;
             }

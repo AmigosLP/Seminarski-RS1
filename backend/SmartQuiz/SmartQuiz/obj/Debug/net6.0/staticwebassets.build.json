@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jhhCKjnySIf4pSHPO3G5i4pQwI4YXvS9fZmDShlXLUo=",
+  "Hash": "lLgZi7CikjN9d6f4fv0UwAWAOn20ooqXA4r5hOQYZlY=",
   "Source": "SmartQuiz",
   "BasePath": "_content/SmartQuiz",
   "Mode": "Default",
@@ -15,5 +15,23 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "E:\\GitHub clone\\Seminarski-RS1\\backend\\SmartQuiz\\SmartQuiz\\wwwroot\\images\\.png",
+      "SourceId": "SmartQuiz",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\GitHub clone\\Seminarski-RS1\\backend\\SmartQuiz\\SmartQuiz\\wwwroot\\",
+      "BasePath": "_content/SmartQuiz",
+      "RelativePath": "images/.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\.png"
+    }
+  ]
 }

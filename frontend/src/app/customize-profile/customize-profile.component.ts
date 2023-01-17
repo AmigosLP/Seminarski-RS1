@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { read } from '@popperjs/core';
@@ -38,8 +38,9 @@ export class CustomizeProfileComponent implements OnInit {
     }
   }
 
-  async onProfileImageSubmit() {
-
+  async onProfileImageSubmit()  
+  {
+      
       //@ts-ignore
       let image=await ImageConverter.ToBase64(this.imageFile);
       /*let ImagineConversion=async () => 
@@ -48,8 +49,11 @@ export class CustomizeProfileComponent implements OnInit {
       }*/
 
      // await ImagineConversion();
+      const payload = {
+        Base64Image:image
+      };
       console.log(image);
-      this.http.post(`${environment.api_url}/api/Players/updateProfileImage`, image).subscribe();
-
+      this.http.post(`${environment.api_url}/api/Players/updateProfileImage`,JSON.stringify(image),{headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe();
+      
   }
 }
