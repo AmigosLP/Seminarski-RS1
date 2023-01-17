@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartQuiz.Data;
@@ -18,10 +13,11 @@ namespace SmartQuiz.Controllers
     public class PlayersController : ControllerBase
     {
         private readonly DataContext _context;
-
-        public PlayersController(DataContext context)
+        private readonly IWebHostEnvironment _environment;
+        public PlayersController(DataContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         // GET: api/Players
@@ -179,5 +175,31 @@ namespace SmartQuiz.Controllers
         {
             return _context.Players.Any(e => e.PlayerID == id);
         }
+
+
+        // POST: api/player/updateProfileImage
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost("updateProfileImage")]
+        public async Task<ActionResult> UpdatePlayerProfileImage([FromBody] string Base64Image)
+        {
+            var rootPath = this._environment.WebRootPath;
+    
+
+            var Base64String = Base64Image.Split(",");
+            var imageFormat = ImageHelper.GetImageExtension(ImageHelper.CheckImageExtension(Base64String[0]));
+
+            if(imageFormat == null)
+            {
+                return BadRequest();
+            }
+            var ImageBytes = Convert.FromBase64String(Base64String[1]);
+            var imagePath = Path.Combine(rootPath,"images", $"{imageFormat}");
+            System.IO.File.WriteAllBytes(imagePath, ImageBytes);
+
+            //Player.Avatar=Path.Combine(string, "images", $"{imageFormat}");
+
+            return Ok();
+        }
+
     }
 }

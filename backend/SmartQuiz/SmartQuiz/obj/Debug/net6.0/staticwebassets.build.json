@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "8CO0ag25W8fJbdxV12SGTAcvjziOvXbGT0Uq5mZx4NA=",
+  "Hash": "jhhCKjnySIf4pSHPO3G5i4pQwI4YXvS9fZmDShlXLUo=",
   "Source": "SmartQuiz",
   "BasePath": "_content/SmartQuiz",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SmartQuiz\\wwwroot",
+      "Source": "SmartQuiz",
+      "ContentRoot": "E:\\GitHub clone\\Seminarski-RS1\\backend\\SmartQuiz\\SmartQuiz\\wwwroot\\",
+      "BasePath": "_content/SmartQuiz",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

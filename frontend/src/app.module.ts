@@ -14,7 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { MainPageComponent } from './app/main-page/main-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SupportPageComponent } from './app/support-page/support-page.component' 
+import { SupportPageComponent } from './app/support-page/support-page.component';
+import { CustomizeProfileComponent } from './app/customize-profile/customize-profile.component' 
+
+
 
 
 
@@ -27,7 +30,8 @@ import { SupportPageComponent } from './app/support-page/support-page.component'
     SignUpComponent,
     LoginComponent,
     MainPageComponent,
-    SupportPageComponent
+    SupportPageComponent,
+    CustomizeProfileComponent
   ],
   imports: [
     BrowserModule,
